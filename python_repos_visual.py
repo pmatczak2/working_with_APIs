@@ -12,7 +12,22 @@ print(f"Status code: {r.status_code}")
 # Process results
 response_dict = r.json()
 repo_dicts = response_dict['items']
-repo_names = [], []
+repo_names, stars = [], []
 for repo_dict in repo_dicts:
-    print(f"Name: {repo_dict['name']}")
-    print(f"Stars: {repo_dict['stargazers_count']}")
+    repo_names.append(repo_dict['name'])
+    stars.append(repo_dict['stargazers_count'])
+
+#  Make visualization.
+data = [{
+    'type': 'bar',
+    'x': repo_names,
+    'y': stars,
+}]
+
+my_layout = {
+    'title': 'Most-Starred Puthon Projects on GitHub',
+    'xaxis': {'title': 'Repository'},
+    'yaxis': {'title': 'Stars'},
+}
+fig = {'data': data, 'layout': my_layout}
+offline.plot(fig, filename='python_repos.html')
