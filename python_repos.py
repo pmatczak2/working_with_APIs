@@ -1,3 +1,4 @@
+
 import requests
 
 # make API call and store the resonse.
@@ -22,4 +23,3 @@ for repo_dict in repo_dicts:
     print(f"Owner: {repo_dict['owner']['login']}")
     print(f"Stars: {repo_dict['stargazers_count']}")
     print(f"Repository: {repo_dict['html_url']}")
-    print(f"Description: {repo_dict['description']}\n")
