@@ -72,3 +72,4 @@ if __name__ == '__main__':
     repo_dicts = get_repo_dicts(r)
     repo_links, stars, labels = get_project_data(repo_dicts)
     make_visualization(repo_links, stars, labels)
+
