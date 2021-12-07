@@ -1,6 +1,6 @@
 import unittest
 
-import python_repos as pr
+import testing_python_repos as pr
 
 class PythonReposTestCase(unittest.TestCase):
     """Tests for python_repos.py."""
